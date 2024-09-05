@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUPERMc Minecraft Ranks</title> <!-- Updated title -->
+    <style>
+        /* Base Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #2c2b2b; /* Dark Blue */
+            color: #D3D3D3; /* Light Gray */
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: linear-gradient(145deg, #111, #222); /* Dark gradient for depth */
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            width: 90%;
+            max-width: 700px;
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #1E90FF; /* Blue */
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px rgba(30, 144, 255, 0.7); /* Light Blue glow */
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            font-size: 1.5em;
+            margin: 15px 0;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        li:hover {
+            transform: scale(1.05);
+            color: #87CEEB; /* Sky Blue */
+        }
+
+        .rank {
+            font-weight: bold;
+            color: #1E90FF; /* Blue */
+        }
+
+        /* Rank card styles */
+        .rank-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .rank-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(30, 144, 255, 0.3) 0%, transparent 80%);
+            transform: rotate(45deg);
+            transition: all 0.5s ease-in-out;
+            z-index: 0;
+        }
+
+        .rank-card:hover::before {
+            top: 0;
+            left: 0;
+        }
+
+        .rank-card .rank {
+            z-index: 1;
+            position: relative;
+        }
+
+        /* Most Buy Tag */
+        .most-buy {
+            display: inline-block;
+            background-color: #FF3333;
+            color: #FFFFFF;
+            padding: 3px 10px;
+            margin-left: 10px;
+            font-size: 0.8em;
+            font-weight: bold;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Button for Discord Invite */
+        .invite-button {
+            display: inline-block;
+            padding: 15px 30px;
+            margin-top: 30px;
+            font-size: 1.2em;
+            color: #D3D3D3; /* Light Gray */
+            background-color: #1A1A1A;
+            border: 2px solid #D3D3D3; /* Light Gray */
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .invite-button:hover {
+            color: #001F3F; /* Dark Blue */
+            background-color: #D3D3D3; /* Light Gray */
+            transform: translateY(-5px);
+            box-shadow: 0 0 15px rgba(211, 211, 211, 0.8); /* Gray glow */
+        }
+
+        .invite-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle, rgba(211, 211, 211, 0.3) 10%, transparent 70%);
+            transform: translate(-50%, -50%);
+            transition: all 0.5s ease-in-out;
+            z-index: 0;
+        }
+
+        .invite-button:hover::before {
+            width: 0;
+            height: 0;
+        }
+
+        .invite-button span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2em;
+            }
+
+            li {
+                font-size: 1.3em;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            .invite-button {
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+        }
+
+        /* Footer with Discord invite */
+        .footer {
+            margin-top: 20px;
+            font-size: 1em;
+            color: #D3D3D3;
+        }
+
+        .footer a {
+            color: #1E90FF; /* Blue */
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #87CEEB; /* Sky Blue */
+            text-shadow: 0 0 10px rgba(30, 144, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SUPERMc Ranks</h1>
+        <ul>
+            <li class="rank-card"><span class="rank">1. VIP Rank</span> / Price: 15m</li>
+            <li class="rank-card"><span class="rank">2. VIP+ Rank</span> / Price: 18m</li>
+            <li class="rank-card"><span class="rank">3. MVP Rank</span> / Price: 25m</li>
+            <li class="rank-card"><span class="rank">4. MVP+ Rank</span> / Price: 28m</li>
+            <li class="rank-card"><span class="rank">5. SUPERMc Rank</span> / Price: 35m</li>
+            <li class="rank-card"><span class="rank">6. SUPERMc+ Rank</span> / Price: 40m <span class="most-buy">Most Buy</span></li>
+        </ul>
+        <p>Every rank has mine blocks, daily keys, and more!</p>
+        <a class="invite-button" href="https://discord.gg/supersMC" target="_blank"><span>Join our Discord!</span></a>
+        <div class="footer">
+        </div>
+    </div>
+</body>
+</html>
